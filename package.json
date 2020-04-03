@@ -1,0 +1,23 @@
+{
+  "name": "constructor-word-guess",
+  "version": "1.0.0",
+  "description": "HW#11",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pamelac08/constructor-word-guess.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/pamelac08/constructor-word-guess/issues"
+  },
+  "homepage": "https://github.com/pamelac08/constructor-word-guess#readme",
+  "dependencies": {
+    "inquirer": "^7.1.0"
+  }
+}
