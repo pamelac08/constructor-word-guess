@@ -1,41 +1,71 @@
-# constructor-word-guess
-HW#11
+# Constructor Word Guess
+Coding Bootcamp
+Unit 11 : Javascript Constructors and Callbacks
 
 
-The completed game should meet the following criteria:
+###  Technical Description
 
-The completed game should be able to receive user input using the inquirer or prompt npm packages.
+* Overview:
+This app is a Word Guess Command-Line Input game.
 
-Your solution should have, at minimum, three files:
+* How it works
 
-Letter.js: Contains a constructor, Letter. This constructor should be able to either display an underlying character or a blank placeholder (such as an underscore), depending on whether or not the user has guessed the letter. That means the constructor should define:
+    - user runs index.js file in node
+    - a word is randomly selected by the program and displayed on the terminal
+    - user is prompted to guess a letter to complete the word
+    - user has 10 guesses to complete the word
+    - every correct letter guessed, the letter will show up in the displayed word array and user is prompted to guess another letter
+    - every incorrect letter guessed, the guess count is decremented and user is prompted to guess another letter
+    - if user guesses a previously guessed letter (either correct or incorrect), enters more than one letter at a time, or enters anything besides a letter: the program will display the error and prompt the user to guess another letter without decrementing the guess count
 
-A string value to store the underlying character for the letter
+User wins if the entire word is completed before the guess count gets to zero and is prompted if they want to play again.
 
-A boolean value that stores whether that letter has been guessed yet
+User loses if they run out of guesses before completing the entire word and is prompted to play again.
 
-A function that returns the underlying character if the letter has been guessed, or a placeholder (like an underscore) if the letter has not been guessed
 
-A function that takes a character as an argument and checks it against the underlying character, updating the stored boolean value to true if it was guessed correctly
+* Technologies used:
 
-Word.js: Contains a constructor, Word that depends on the Letter constructor. This is used to create an object representing the current word the user is attempting to guess. That means the constructor should define:
+    - Inquirer prompt method
+    - NPM packages
+    - JS constructors (including export and require)
+    - Javascript/jQuery 
+       - data validation
+       - conditional statements
+       - for loops
 
-An array of new Letter objects representing the letters of the underlying word
 
-A function that returns a string representing the word. This should call the function on each letter object (the first function defined in Letter.js) that displays the character or an underscore and concatenate those together.
+* Technical Approach:
 
-A function that takes a character as an argument and calls the guess function on each letter object (the second function defined in Letter.js)
+    - User input is received using the inquirer npm package
+    - Contains three files:
 
-index.js: The file containing the logic for the course of the game, which depends on Word.js and:
+        * Letter.js: Containing the *Letter* constructor 
+            - This constructor display either the letter or a blank placeholder, depending on whether or not the user has guessed the letter 
+            * This constructor should define:
+                - A string value to store the underlying character for the letter
+                - A boolean value that stores whether that letter has been guessed yet
+                - A function that returns the underlying character if the letter has been guessed, or a placeholder (like an underscore) if the letter has not been guessed
+                - A function that takes a character as an argument and checks it against the underlying character, updating the stored boolean value to true if it was guessed correctly
 
-Randomly selects a word and uses the Word constructor to store it
+        * Word.js: Containing the *Word* constructor 
+            - The Word constructor depends on the Letter constructor and is used to create an object representing the current word the user is attempting to guess 
+            * This constructor defines:
+                - An array of new Letter objects representing the letters of the underlying word
+                - A function that returns a string representing the word. This should call the function on each letter object that displays the character or an underscore and concatenate those together.
+                - A function that takes a character as an argument and calls the guess function on each letter object
 
-Prompts the user for each guess and keeps track of the user's remaining guesses
+        * index.js: The file containing the logic for the course of the game
+            - depends on Word constructor
+            - Randomly selects a word and uses the Word constructor to store it
+            - Prompts the user for each guess and keeps track of the user's remaining guesses
 
-Letter.js should not require any other files.
+    - Letter.js should not require any other files.
+    - Word.js should only require Letter.js
 
-Word.js should only require Letter.js
 
-HINT: Write Letter.js first and test it on its own before moving on, then do the same thing with Word.js
 
-HINT: If you name your letter's display function toString, JavaScript will call that function automatically whenever casting that object to a string (check out this example: https://jsbin.com/facawetume/edit?js,console)
+Gif displaying all errors with messaging and winning the game
+![Gif-withErrorsWin](./gifs/constructor_wordGuess_errors_win.gif)
+
+Gif displaying a losing game
+![Gif-withLose](./gifs/constructor_wordGuess_lose.gif)
